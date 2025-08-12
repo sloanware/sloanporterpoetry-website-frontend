@@ -158,6 +158,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(section);
   });
+
+  // --- Hamburger menu toggle ---
+  const hamburger = document.getElementById('hamburgerBtn');
+  if (hamburger) {
+    hamburger.onclick = function() {
+      document.body.classList.toggle('sidebar-open');
+    };
+  }
+  // Optional: close sidebar when clicking outside
+  document.addEventListener('click', function(e) {
+    if (
+      document.body.classList.contains('sidebar-open') &&
+      !e.target.closest('#sidebar') &&
+      !e.target.closest('.hamburger')
+    ) {
+      document.body.classList.remove('sidebar-open');
+    }
+  });
+
 });
 
 // --- Contact form ---

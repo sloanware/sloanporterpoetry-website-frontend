@@ -2438,7 +2438,7 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			background: #ffffff;
 			border-color: #ffffff;
-			color: #b74e91;
+			color: #380000;
 			content: '\f00c';
 		}
 
@@ -3244,7 +3244,7 @@ input, select, textarea {
 			}
 
 		.wrapper.alt {
-			background-color: #261c3e;
+			background-color: #380000;
 		}
 
 		.wrapper.style1 {
@@ -3252,7 +3252,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #380000;
 		}
 
 		.wrapper.style2 {
@@ -3260,7 +3260,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style2-alt {
-			background-color: #3e4094;
+			background-color: #3a3a3a;
 		}
 
 		.wrapper.style3 {
@@ -3268,7 +3268,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3-alt {
-			background-color: #953d75;
+			background-color: #bebebe;
 		}
 
 		.wrapper.fullscreen {
@@ -3507,6 +3507,15 @@ input, select, textarea {
 
 			#sidebar + #wrapper + #footer {
 				margin-left: 0;
+			}
+
+		}
+
+		@media screen and (min-width: 1681px) {
+
+			#footer > .inner {
+				text-align: left;
+				padding-left: 21%;
 			}
 
 		}
@@ -3916,6 +3925,11 @@ input, select, textarea {
 		background-size: cover;
 	}
 
+	#intro h1,
+	#intro h2 {
+		text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 1px 0 #000;
+	}
+
 		#intro p {
 			font-size: 1.25em;
 		}
@@ -3943,6 +3957,176 @@ input, select, textarea {
 			}
 
 		}
+
+/* Hamburger menu button (hidden by default) */
+
+	.hamburger {
+	display: none;
+	position: fixed;
+	top: 1em;
+	right: 1em;
+	z-index: 12000;
+	width: 1.8em;
+	height: 1.8em;
+	cursor: pointer;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: none;
+	border: none;
+	}
+
+	.hamburger span {
+	display: block;
+	width: 1.4em;
+	height: 0.2em;
+	margin: 0.22em 0;
+	background: #fff;
+	border-radius: 2px;
+	transition: 0.3s;
+	position: relative;
+	transform-origin: center;
+	}
+
+	/* Animate hamburger to X when sidebar is open */
+	body.sidebar-open .hamburger span:nth-child(1) {
+	transform: translateY(0.6em) rotate(45deg);
+	}
+
+	body.sidebar-open .hamburger span:nth-child(2) {
+	opacity: 0;
+	transform: none;
+	}
+
+	body.sidebar-open .hamburger span:nth-child(3) {
+	transform: translateY(-0.6em) rotate(-45deg);
+	}
+
+	/* Remove default button styles from hamburger */
+	.hamburger {
+		border: none !important;
+		background: none !important;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+		padding: 0 !important;
+	}
+
+/* Sidebar hidden by default on mobile */
+
+	@media screen and (max-width: 736px) {
+
+		#sidebar {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 13em;
+        height: 100vh;
+        background: #000000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 11000;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+        text-align: center; 
+        padding: 2em 1.5em 1em 1.5em;
+    }
+
+	#sidebarLogo {
+        max-height: 4em;
+        width: auto;
+        height: auto;
+        display: block;
+    }
+
+    #sidebar > .inner {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center; 
+        justify-content: flex-start;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    #logoContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2em;
+        padding: 0;
+    }
+
+    #sidebar nav {
+        width: 100%;
+    }
+
+    #sidebar nav ul {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center; 
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #sidebar nav ul li {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center; 
+    }
+
+	#sidebar nav ul li:first-child {
+        margin-top: 4em;
+        padding-top: 0;
+    }
+
+    #sidebar nav a {
+        width: 100%;
+        padding: 0.5em 0;
+        text-align: center; 
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        color: #fff;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    /* Remove animated lines for mobile */
+    #sidebar nav a:before,
+    #sidebar nav a:after {
+        display: none !important;
+        content: none !important;
+    }
+
+/* Show sidebar when .sidebar-open is on body */
+
+	body.sidebar-open #sidebar {
+		transform: translateX(0);
+	}
+
+	/* Hamburger visible on mobile */
+
+	.hamburger {
+		display: flex;
+	}
+	}
+
+/* Optional: darken background when sidebar is open */
+
+	@media screen and (max-width: 736px) {
+		
+		body.sidebar-open::before {
+			content: '';
+			position: fixed;
+			z-index: 10999;
+			top: 0; left: 0; right: 0; bottom: 0;
+			background: rgba(0,0,0,0.5);
+		}
+	}
 
 /* Newsletter Modal */
 
@@ -4014,3 +4198,4 @@ input, select, textarea {
 	.close:hover {
 		color: #fff;
 	}
+	
