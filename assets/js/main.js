@@ -166,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.toggle('sidebar-open');
     };
   }
+
   // Optional: close sidebar when clicking outside
   document.addEventListener('click', function(e) {
     if (
@@ -175,6 +176,15 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       document.body.classList.remove('sidebar-open');
     }
+  });
+
+  // Close sidebar on mobile when a menu item is clicked
+  document.querySelectorAll('#sidebar nav a').forEach(link => {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 736 && document.body.classList.contains('sidebar-open')) {
+        document.body.classList.remove('sidebar-open');
+      }
+    });
   });
 
 });
