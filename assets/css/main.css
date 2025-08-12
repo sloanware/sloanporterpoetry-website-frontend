@@ -1304,7 +1304,7 @@ input, select, textarea {
 				display: flex;
 				flex-wrap: wrap;
 				box-sizing: border-box;
-				align-items: left;
+				align-items: stretch;
 			}
 
 				.row > * {
@@ -3943,6 +3943,10 @@ input, select, textarea {
 			}
 
 			@media screen and (max-width: 736px) {
+
+				#intro {
+					background-position: 25% center;
+				}
 
 				#intro p {
 					font-size: 1em;
