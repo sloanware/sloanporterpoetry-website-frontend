@@ -1,4 +1,5 @@
 main_refactored.js
+main_newsletterVersion.js
 images/Author_Photo_Website_Red.jpg
 images/pic01_MyBook.jpg
 images/pic01_MyBookV2.jpg
@@ -15,6 +16,7 @@ images/pic05.jpg
 images/pic06.jpg
 images/signature.svg
 images/signature_large_size_vector.png
+assets/css/main_newsletterVersion.css
 assets/css/images/intro_photo2.png
 assets/css/images/intro_photo3.png
 assets/css/images/intro_photo4.png
