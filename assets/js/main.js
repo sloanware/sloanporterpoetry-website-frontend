@@ -244,10 +244,15 @@ document.addEventListener('DOMContentLoaded', () => {
   
 // --- Newsletter Modal ---
 
-// Open modal
-document.querySelector('.button.scrolly').addEventListener('click', function(event) {
-  event.preventDefault(); 
-  document.getElementById('newsletterModal').style.display = 'block';
+// Open modal for newsletter buttons only
+document.querySelectorAll('.button.scrolly').forEach(btn => {
+  btn.addEventListener('click', function(event) {
+    const text = btn.textContent.trim().toLowerCase();
+    if (text === 'join newsletter!' || text === 'keep me updated!') {
+      event.preventDefault();
+      document.getElementById('newsletterModal').style.display = 'block';
+    }
+  });
 });
 
 // Close modal
