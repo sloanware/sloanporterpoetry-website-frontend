@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const website = document.getElementById('website').value.trim();
 
   try {
-    const response = await fetch('http://localhost:3000/api/contact', {
+    const response = await fetch('https://sloanporterpoetry-website-backend.onrender.com/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -284,7 +284,7 @@ document.getElementById('newsletterForm').addEventListener('submit', async funct
   }
 
   try {
-    const response = await fetch('http://localhost:3000/api/newsletter', {
+    const response = await fetch('https://sloanporterpoetry-website-backend.onrender.com/api/newsletter', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
