@@ -3516,7 +3516,7 @@ input, select, textarea {
 
 			#footer > .inner {
 				text-align: left;
-				padding-left: 21%;
+				padding-left: 0;
 			}
 
 		}
