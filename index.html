@@ -221,7 +221,12 @@
 											</div>
 										</div>
 										<ul class="actions">
-											<li><button id="submitButton" type="submit" class="button">Send Message</button></li>
+											<li>
+												<button id="submitButton" type="submit" class="button">
+													<span id="sendText">Send Message</span>
+													<span class="spinner" id="contactSpinner" style="display:none;"></span>
+												</button>
+											</li>
 											<li><p id="formMessage" style="color: green"></p></li>
 										</ul>
 									</form>
@@ -272,7 +277,10 @@
 					<form id="newsletterForm">
 						<input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" required>
 						<ul class="actions">
-							<button type="submit" class="button submit">Subscribe</button>
+							<button type="submit" class="button submit" id="newsletterSubmitButton">
+								<span id="newsletterText">Subscribe</span>
+								<span class="spinner" id="newsletterSpinner" style="display:none;"></span>
+							</button>
 						</ul>
 						<p id="newsletterMessage"></p>
 					</form>

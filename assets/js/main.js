@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Features sections. 
+  // Features sections
   document.querySelectorAll(".features").forEach(section => {
     section.classList.add("inactive");
 
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
   });
 
-  // --- Hamburger menu toggle ---
+  // Hamburger menu toggle
   const hamburger = document.getElementById('hamburgerBtn');
   if (hamburger) {
     hamburger.onclick = function() {
@@ -196,11 +196,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
   const formMessage = document.getElementById('formMessage');
   const submitButton = document.getElementById('submitButton');
+  const contactSpinner = document.getElementById('contactSpinner');
+  const sendText = document.getElementById('sendText');
 
   form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   submitButton.disabled = true;
+  sendText.style.display = 'none';
+  contactSpinner.style.display = 'inline-block';
 
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -238,6 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
       form.reset();
     } finally {
       submitButton.disabled = false;
+      sendText.style.display = 'inline';
+      contactSpinner.style.display = 'none';
     }
   });
 });
@@ -268,7 +274,11 @@ document.querySelector('.close').addEventListener('click', function() {
 //   }
 // });
 
-// Newsletter handling.
+// Newsletter handling
+const newsletterSubmitButton = document.getElementById('newsletterSubmitButton');
+const newsletterSpinner = document.getElementById('newsletterSpinner');
+const newsletterText = document.getElementById('newsletterText');
+
 document.getElementById('newsletterForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const emailInput = document.getElementById('newsletterEmail');
@@ -276,7 +286,10 @@ document.getElementById('newsletterForm').addEventListener('submit', async funct
   const email = emailInput.value.trim();
 
   formMessage.textContent = '';
-  submitButton.disabled = true;
+  newsletterSubmitButton.disabled = true;
+  newsletterText.style.display = 'none';
+  newsletterSpinner.style.display = 'inline-block';
+
 
   if (!email) {
     formMessage.textContent = 'Please enter an email address.';
@@ -308,5 +321,7 @@ document.getElementById('newsletterForm').addEventListener('submit', async funct
     formMessage.style.color = 'red';
   }
 
-  submitButton.disabled = false;
+  newsletterSubmitButton.disabled = false;
+  newsletterText.style.display = 'inline';
+  newsletterSpinner.style.display = 'none';
 });

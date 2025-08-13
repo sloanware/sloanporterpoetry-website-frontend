@@ -4202,4 +4202,23 @@ input, select, textarea {
 	.close:hover {
 		color: #fff;
 	}
+
+/* Loading Wheel */
+
+	.spinner {
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		border: 2px solid #fff;
+		border-top: 2px solid #888;
+		border-radius: 50%;
+		animation: spin 0.7s linear infinite;
+		vertical-align: middle;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	@keyframes spin {
+		to { transform: rotate(360deg); }
+	}
 	
