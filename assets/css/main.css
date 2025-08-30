@@ -183,16 +183,16 @@ input, select, textarea {
 	}
 
 		h1.major {
-			margin: 0 0 1.3em 0;
+			margin: 0 0 0.5em 0;
 			position: relative;
 			padding-bottom: 0.35em;
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, #3a3a3a, #380000);
+				background-image: -webkit-linear-gradient(to right, #3a3a3a, #380000);
+				background-image: -ms-linear-gradient(to right, #3a3a3a, #380000);
+				background-image: linear-gradient(to right, #3a3a3a, #380000);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3389,7 +3389,6 @@ input, select, textarea {
 			color: #ffffff;
 			display: block;
 			font-size: 1.25em;
-			font-weight: bold;
 		}
 
 		#header > nav {
